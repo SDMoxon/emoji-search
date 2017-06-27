@@ -6,8 +6,9 @@ class EmojiList extends React.Component {
     render () {
         return (
             <div>
-                EmojiList
-                <Emoji />
+                {this.props.emojiList.map((emoji) => {
+                    return <Emoji title={emoji.title} symbol={emoji.symbol} />;
+                })}
             </div>
         );
     }
