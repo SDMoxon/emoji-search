@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React Project Starter
 
 This starter project has everything you need to start writing React as fast as possible. 
@@ -21,3 +22,6 @@ git push -u origin master
 ```
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+=======
+# emoji-search
+>>>>>>> 93a0b15fcb39d5aad8edfb60d6ccf02a04f38987
