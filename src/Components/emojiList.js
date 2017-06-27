@@ -1,14 +1,21 @@
 import React from 'react';
 import Emoji from './emoji';
-
+import emojiList from '../emojiList.json';
 
 class EmojiList extends React.Component {
-    render () {
+    constructor(props) {
+        super(props);
+    }
+    render() {
         return (
             <div>
-                {this.props.emojiList.map((emoji) => {
-                    return <Emoji title={emoji.title} symbol={emoji.symbol} />;
-                })}
+                {emojiList.reduce((acc, emoji) => {
+                    const expression = new RegExp(this.props.searchTerm,'i');
+                    if (expression.test(emoji.title) || emoji.keywords.includes(this.props.searchTerm)) {
+                        acc.push(<Emoji title={emoji.title} symbol={emoji.symbol} />);
+                    }
+                    return acc;
+                }, [])}
             </div>
         );
     }

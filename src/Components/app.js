@@ -1,29 +1,30 @@
 import React from 'react';
 import SearchBar from './searchBar';
 import EmojiList from './emojiList';
-import emojiList from '../emojiList.json';
+
 
 class App extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            searchTerm : this.props.value
+            searchTerm : ''
         };
-        this.handleChange = this.handleChange.bind(this);
+        this.getSearchTerm = this.getSearchTerm.bind(this);
     }
     render () {
         return (
             <div>
                 App
-                <SearchBar onChange={this.handleChange}/>
-                <EmojiList emojiList={emojiList}/>
+                <SearchBar getSearchTerm={this.getSearchTerm}/>
+                <EmojiList searchTerm={this.state.searchTerm}/>
             </div>
         );
     }
-    handleChange(text) {
+    getSearchTerm(text) {
         this.setState({
             searchTerm : text
         });
+        console.log(this.state.searchTerm);
     }
 }
 
