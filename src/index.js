@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './Components/app';
+
 
 const MyFirstComponent = React.createElement(
   'h1', 
@@ -7,4 +9,6 @@ const MyFirstComponent = React.createElement(
   'Welcome to React!'
 );
 
-ReactDOM.render(Hello, document.getElementById('root'));
+ReactDOM.render(
+  <App/>, document.getElementById('root')
+);
